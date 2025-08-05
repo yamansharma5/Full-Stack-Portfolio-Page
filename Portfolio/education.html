@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education | Your Name</title>
+
+    <link rel="stylesheet" href="education.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>My Academic Journey</h1>
+            <p>A timeline of my degrees, certifications, and key achievements.</p>
+        </header>
+
+        <main class="education-timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-date">August 2023 - May 2027</p>
+                    <h3>Bachelor of Technology, Computer Science (Artificial Intelligence)</h3>
+                    <h4>Jaipur Engineering College and Research Centre (JECRC), Jaipur</h4>
+                    <p>
+                        8.0 CGPA
+                    </p>
+                    <ul>
+                        <li><strong>Key Skills:</strong> Data Structures & Algorithms,Database Systems, Operating Systems.</li>
+                        <li><strong>Development:</strong> Full Stack Web Development</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-date">April 2021 - March 2022</p>
+                    <h3>Senior Secondary Education (Class XII)</h3>
+                    <h4>Presidency The International School Bhiwadi</h4>
+                    <p>
+                        Completed my high school education with a focus on Physics, Chemistry, and Mathematics (PCM).
+                         achieving 84% in the CBSE board examinations.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-date">2020</p>
+                    <h3>Class 10</h3>
+                    <h4>Presidency The International School Bhiwadi</h4>
+                    <p>
+                        Percentage 92%
+                    </p>
+                </div>
+            </div>
+            
+            </main>
+    </div>
+
+    <script>
+        // Wait for the page to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Select all the timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    // Create an observer function
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // If the item is in the viewport (is intersecting)
+            if (entry.isIntersecting) {
+                // Add the 'visible' class to trigger the animation
+                entry.target.classList.add('visible');
+                // Stop observing the item once it's visible
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the item is visible
+    });
+
+    // Observe each timeline item
+    timelineItems.forEach(item => {
+        observer.observe(item);
+    });
+
+});
+    </script>
+
+</body>
+</html>

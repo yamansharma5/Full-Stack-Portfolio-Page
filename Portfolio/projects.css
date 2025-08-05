@@ -1,0 +1,163 @@
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #1d2d3e;
+    --background-color: #f4f7f9;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --text-light: #666;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* Filter Buttons */
+#filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Project Gallery */
+#project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    background-color: var(--card-background);
+}
+
+.project-item.hide {
+    transform: scale(0.8);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Hover Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    transform: translateY(15px);
+    transition: transform 0.4s ease;
+}
+
+.overlay p {
+    transform: translateY(15px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.overlay a {
+    color: #fff;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    align-self: flex-start;
+    transform: translateY(15px);
+    transition: transform 0.4s ease 0.2s;
+}
+
+.project-item:hover .overlay h3,
+.project-item:hover .overlay p,
+.project-item:hover .overlay a {
+    transform: translateY(0);
+}
