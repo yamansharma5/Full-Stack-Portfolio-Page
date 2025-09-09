@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Your Name</title>
+
+    <link rel="stylesheet" href="contact.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>Get In Touch</h1>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        </header>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Fill up the form and I will get back to you within 24 hours.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 7014619911</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>yamansharma1232@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jaipur, Rajasthan, India</span>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yamansharma06/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/yamansharma5" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVxZQwFFhZctssfbPPgMVmnxFvTCPJrzhjBTvLdzBMKcXDbPPgQpSrzLwKhJLDVCVTrBzk" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+
+                
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', (event) => {
+        // Prevent the default form submission behavior (page reload)
+        event.preventDefault();
+
+        // Get form data
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Basic validation
+        if (name === '' || email === '' || message === '') {
+            formStatus.textContent = 'Please fill out all required fields.';
+            formStatus.style.color = 'red';
+            return;
+        }
+
+        // --- IMPORTANT ---
+        // In a real application, you would send the data to a server here.
+        // For this demo, we'll just simulate a successful submission.
+        
+        console.log('Form Submitted:');
+        console.log(`Name: ${name}`);
+        console.log(`Email: ${email}`);
+        console.log(`Message: ${message}`);
+        
+        // Show success message
+        formStatus.textContent = 'Thank you! Your message has been sent.';
+        formStatus.style.color = 'green';
+
+        // Clear the form after a successful submission
+        form.reset();
+
+        // Optional: Hide the message after a few seconds
+        setTimeout(() => {
+            formStatus.textContent = '';
+        }, 5000);
+    });
+});
+    </script>
+</body>
+</html>

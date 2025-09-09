@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume | Yaman Sharma</title>
+
+    <link rel="stylesheet" href="resume-style.css">
+    <style>
+        body {
+    background-color: #e9ecef; /* A neutral, light grey background */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.resume-page-container {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.resume-header {
+    margin-bottom: 30px;
+}
+
+.resume-header h1 {
+    font-size: 2.5rem;
+    color: #1d2d3e;
+    margin-bottom: 15px;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.download-button i {
+    margin-right: 8px;
+}
+
+/* This is the NEW style for the PDF iframe */
+.resume-pdf-wrapper iframe {
+    width: 100%;
+    height: 100vh; /* This makes the viewer take up the full screen height */
+    border: none; /* Removes the default iframe border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+    </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="resume-page-container">
+        <header class="resume-header">
+            <h1>My Resume</h1>
+            <a href="assets/YAMAN SHARMA - Google Docs.pdf" class="download-button" >
+                <i class="fas fa-download"></i> Download as PDF
+            </a>
+        </header>
+
+        <main class="resume-pdf-wrapper">
+        <iframe src="assets/YAMAN SHARMA - Google Docs.pdf" title="Yaman Sharma's Resume PDF Viewer"></iframe>
+        </main>
+    </div>
+</body>
+</html>
