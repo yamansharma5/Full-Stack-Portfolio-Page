@@ -26,6 +26,89 @@ body {
     margin: 0 auto;
     padding: 50px 20px;
 }
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- About Section --- */
+#about {
+    text-align: left;
+    background-color:#ecf0f1;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h1 {
+    font-size: 3rem;
+}
+
+.about-text h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+.about-text p{
+    font-size: 1 rem;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+}
+
+
 
 .page-header {
     text-align: center;
